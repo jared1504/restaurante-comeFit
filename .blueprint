@@ -1,0 +1,131 @@
+created:
+    - app/Http/Controllers/UserController.php
+    - app/Http/Controllers/TableController.php
+    - app/Http/Controllers/SupplierController.php
+    - app/Http/Controllers/IngredientController.php
+    - app/Http/Controllers/OrderController.php
+    - app/Http/Controllers/CategoryController.php
+    - app/Http/Controllers/DishController.php
+    - app/Http/Controllers/SaleController.php
+    - database/factories/UserFactory.php
+    - database/factories/TableFactory.php
+    - database/factories/SupplierFactory.php
+    - database/factories/IngredientFactory.php
+    - database/factories/OrderFactory.php
+    - database/factories/OrderDetailFactory.php
+    - database/factories/CategoryFactory.php
+    - database/factories/DishFactory.php
+    - database/factories/DishIngredientFactory.php
+    - database/factories/SaleFactory.php
+    - database/factories/SaleDetailFactory.php
+    - database/factories/WaiterSaleFactory.php
+    - database/factories/CashierSaleFactory.php
+    - database/factories/ChefSaleFactory.php
+    - database/migrations/2022_10_30_193604_create_users_table.php
+    - database/migrations/2022_10_30_193605_create_tables_table.php
+    - database/migrations/2022_10_30_193606_create_suppliers_table.php
+    - database/migrations/2022_10_30_193607_create_ingredients_table.php
+    - database/migrations/2022_10_30_193608_create_orders_table.php
+    - database/migrations/2022_10_30_193609_create_order_details_table.php
+    - database/migrations/2022_10_30_193610_create_categories_table.php
+    - database/migrations/2022_10_30_193611_create_dishes_table.php
+    - database/migrations/2022_10_30_193612_create_dish_ingredients_table.php
+    - database/migrations/2022_10_30_193613_create_sales_table.php
+    - database/migrations/2022_10_30_193614_create_sale_details_table.php
+    - database/migrations/2022_10_30_193615_create_waiter_sales_table.php
+    - database/migrations/2022_10_30_193616_create_cashier_sales_table.php
+    - database/migrations/2022_10_30_193617_create_chef_sales_table.php
+    - app/Models/User.php
+    - app/Models/Table.php
+    - app/Models/Supplier.php
+    - app/Models/Ingredient.php
+    - app/Models/Order.php
+    - app/Models/OrderDetail.php
+    - app/Models/Category.php
+    - app/Models/Dish.php
+    - app/Models/DishIngredient.php
+    - app/Models/Sale.php
+    - app/Models/SaleDetail.php
+    - app/Models/WaiterSale.php
+    - app/Models/CashierSale.php
+    - app/Models/ChefSale.php
+    - tests/Feature/Http/Controllers/UserControllerTest.php
+    - tests/Feature/Http/Controllers/TableControllerTest.php
+    - tests/Feature/Http/Controllers/SupplierControllerTest.php
+    - tests/Feature/Http/Controllers/IngredientControllerTest.php
+    - tests/Feature/Http/Controllers/OrderControllerTest.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+    - tests/Feature/Http/Controllers/DishControllerTest.php
+    - tests/Feature/Http/Controllers/SaleControllerTest.php
+    - app/Http/Requests/UserStoreRequest.php
+    - app/Http/Requests/UserUpdateRequest.php
+    - app/Http/Requests/TableStoreRequest.php
+    - app/Http/Requests/TableUpdateRequest.php
+    - app/Http/Requests/IngredientStoreRequest.php
+    - app/Http/Requests/IngredientUpdateRequest.php
+    - app/Http/Requests/OrderStoreRequest.php
+    - app/Http/Requests/OrderUpdateRequest.php
+    - app/Http/Requests/DishStoreRequest.php
+    - app/Http/Requests/DishUpdateRequest.php
+    - app/Http/Requests/SaleStoreRequest.php
+    - app/Http/Requests/SaleUpdateRequest.php
+    - resources/views/user/index.blade.php
+    - resources/views/user/create.blade.php
+    - resources/views/user/show.blade.php
+    - resources/views/user/edit.blade.php
+    - resources/views/table/index.blade.php
+    - resources/views/table/create.blade.php
+    - resources/views/table/show.blade.php
+    - resources/views/table/edit.blade.php
+    - resources/views/supplier/index.blade.php
+    - resources/views/supplier/create.blade.php
+    - resources/views/supplier/show.blade.php
+    - resources/views/supplier/edit.blade.php
+    - resources/views/ingredient/index.blade.php
+    - resources/views/ingredient/create.blade.php
+    - resources/views/ingredient/show.blade.php
+    - resources/views/ingredient/edit.blade.php
+    - resources/views/order/index.blade.php
+    - resources/views/order/create.blade.php
+    - resources/views/order/show.blade.php
+    - resources/views/order/edit.blade.php
+    - resources/views/category/index.blade.php
+    - resources/views/category/create.blade.php
+    - resources/views/category/show.blade.php
+    - resources/views/category/edit.blade.php
+    - resources/views/dish/index.blade.php
+    - resources/views/dish/create.blade.php
+    - resources/views/dish/show.blade.php
+    - resources/views/dish/edit.blade.php
+    - resources/views/sale/index.blade.php
+    - resources/views/sale/create.blade.php
+    - resources/views/sale/show.blade.php
+    - resources/views/sale/edit.blade.php
+updated:
+    - routes/web.php
+models:
+    Supplier: { name: string, email: string, phone: string, relationships: { hasMany: Order } }
+    Unit: { unit: 'string:20', type: 'enum:solid,weight,temperature,liquid,volume', equivalence: 'string:20', slug: string, abbreviation: 'string:20', relationships: { belongsToMany: Product } }
+    Category: { name: string, image: string, relationships: { hasMany: Dish } }
+    Product: { name: 'string:100', category_id: 'id foreign', supplier_id: 'id foreign', price: 'decimal:7,2', stock: 'decimal:7,2', slug: string, presentation: string, brand: string, url_photo: string, content: 'decimal:7,2' }
+    User: { name: string, email: 'string unique', password: string, type: integer, relationships: { hasMany: 'Cashier_sale, Waiter_sale, Chef_sale' } }
+    Table: { status: integer, relationships: { hasMany: Sale } }
+    Ingredient: { name: string, unit: string, stock: double, cost: double, relationships: { hasMany: 'Order_detail, Dish_ingredient' } }
+    Order: { total: double, supplier_id: 'id foreign', user_id: 'id foreign', relationships: { hasMany: Order_detail } }
+    Order_detail: { amount: double, price: double, subtotal: double, order_id: 'id foreign', ingredient_id: 'id foreign', relationships: { belongsTo: 'Order, Ingredient' } }
+    Dish: { name: string, description: string, image: string, cost: double, price: double, cal: integer, category_id: 'id foreign', relationships: { hasMany: 'Sale_details, Dish_ingredients' } }
+    Dish_ingredients: { amount: double, dish_id: 'id foreign', ingredient_id: 'id foreign', relationships: { belongsTo: 'Dish, Ingredient' } }
+    Sale: { status: integer, total: double, table_id: 'id foreign', relationships: { hasMany: 'Cashier_sale, Waiter_sale, Chef_sale' } }
+    Sale_details: { status: integer, amount: double, price: double, subtotal: double, dish_id: 'id foreign', sale_id: 'id foreign', relationships: { belongsTo: 'Sale, Dish' } }
+    Sale_waiter: { relationships: { belongsTo: 'User, Sale' } }
+    Sale_cashier: { relationships: { belongsTo: 'User, Sale' } }
+    Sale_chef: { relationships: { belongsTo: 'User, Sale' } }
+    Waiter_sale: { sale_id: 'id foreign', user_id: 'id foreign', relationships: { belongsTo: 'User, Sale' } }
+    Cashier_sale: { sale_id: 'id foreign', user_id: 'id foreign', relationships: { belongsTo: 'User, Sale' } }
+    Chef_sale: { sale_id: 'id foreign', user_id: 'id foreign', relationships: { belongsTo: 'User, Sale' } }
+    OrderDetail: { amount: double, price: double, subtotal: double, order_id: 'id foreign', ingredient_id: 'id foreign' }
+    DishIngredient: { amount: double, dish_id: 'id foreign', ingredient_id: 'id foreign' }
+    SaleDetail: { status: integer, amount: double, price: double, subtotal: double, dish_id: 'id foreign', sale_id: 'id foreign' }
+    WaiterSale: { sale_id: 'id foreign', user_id: 'id foreign' }
+    CashierSale: { sale_id: 'id foreign', user_id: 'id foreign' }
+    ChefSale: { sale_id: 'id foreign', user_id: 'id foreign' }

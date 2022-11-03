@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+:root {
+    /* Font */
+    --font-principal: Lato;
+    --font-stack: Helvetica, sans-serif;
+
+    /* Colors */
+    --primary-color: #85c1ef;
+    --secondary-color: #cd9494;
+    --secondary-color: #fbfcfc;
+
+    /* Alert messages */
+    /* Background */
+    --bg-info-color: #cce5ff;
+    --bg-danger-color: #f8d7da;
+    --bg-success-color: #d4edda;
+    --bg-warning-color: #fff3cd;
+    --bg-dark-color: #d6d8d9;
+    /* Border */
+    --b-info-color: #b8daff;
+    --b-danger-color: #f5c6cb;
+    --b-success-color: #c3e6cb;
+    --b-warning-color: #ffeeba;
+    --b-dark-color: #c6c8ca;
+    /* Font */
+    --f-info-color: #004085;
+    --f-danger-color: #721c24;
+    --f-success-color: #155724;
+    --f-warning-color: #856404;
+    --f-dark-color: #1b1e21;
+
+    /* Colors */
+    --heart: red;
+    --like: blue;
+    --delgada: 300;
+    --regular: 400;
+    --bold: 700;
+    --black: 900;
+
+    /*Botonnes*/
+    /*success*/
+    --success-tono1: #3DA64A;
+    --success-tono2: #26662D;
+    --success-tono3: #55E666;
+    --success-tono4: #5AF26B;
+    --success-tono5: #4CCC5A;
+   
+    --separacion: 5rem;
+
+    --color-dark:#0c4c07;
+    --color-semi-dark:#195812;
+    --color-middle:#27631e;
+    --color-semi-light:#346f29;
+    --color-light:#417b34;
+
+    --bg-dark:#357c29;
+    --bg-semi-dark:#5f9d50;
+    --bg-middle:#89be77;
+    --bg-semi-light:#b3de9f;
+    --bg-light:#ddffc6;
+
+}

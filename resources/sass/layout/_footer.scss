@@ -1,0 +1,40 @@
+.footer {
+
+    h3,
+    h4,
+    p,
+    a {
+        color: white;
+    }
+
+    background-color: var(--color-dark);
+    padding: 1rem 0;
+
+    &__img {
+        width: 5rem;
+    }
+
+    &__nav {
+        padding: 0 5rem 1rem 5rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 3px solid white;
+    }
+
+    &__network {
+        margin: 2rem 20rem;
+        text-align: center;
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        &__nav {
+            margin: 2rem 20rem;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+
+}

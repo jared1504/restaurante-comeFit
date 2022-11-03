@@ -1,0 +1,68 @@
+.dish {
+    padding-right: 2rem;
+
+    &__name {
+        text-transform: capitalize;
+    }
+
+    &__image {
+        width: 40%;
+        height: auto;
+    }
+
+    color: black;
+
+    &__price {
+        margin: 1rem 0;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    &__cal {
+        span {
+            font-weight: 600;
+        }
+    }
+
+    &__description {
+        margin: 1rem 0;
+        text-align: justify;
+    }
+
+    &__aside {
+        width: 40%;
+        &__title{
+            text-align: center;
+            color: var(--color-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__card {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        background-color: var(--bg-middle);
+        color: var(--color-dark);
+        text-decoration: none;
+
+        &__name {
+            font-weight: 700;
+            text-transform: capitalize;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        &__cal,
+        &__price {
+            span {
+                font-weight: 600;
+            }
+
+            margin-bottom: 0.2rem;
+        }
+    }
+
+}

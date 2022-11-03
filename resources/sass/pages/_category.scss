@@ -1,0 +1,65 @@
+.nav-categories {
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: space-evenly;
+
+    &__item {
+        width: 12%;
+        text-decoration: none;
+        text-transform: capitalize;
+        text-align: center;
+        color: var(--bg-light);
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 1rem 0rem;
+
+        &:hover {
+            background-color: var(--bg-light);
+            color: var(--color-dark);
+        }
+    }
+}
+
+.page-category {
+
+    margin: 2rem 0;
+
+    &__title {
+        text-transform: capitalize;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}
+
+.card-product {
+    text-decoration: none;
+    background-color: var(--bg-semi-light);
+    padding: 1rem;
+    color: var(--color-dark);
+
+    &__name {
+        margin: 5px 0;
+        font-weight: 600;
+        font-size: 2rem;
+        text-transform: capitalize;
+    }
+
+    &__price {
+        font-size: 2rem;
+        text-transform: capitalize;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    &__cal {
+        margin: 5px 0;
+        font-size: 1rem;
+        text-align: justify;
+
+        span {
+            font-weight: 600;
+        }
+    }
+}

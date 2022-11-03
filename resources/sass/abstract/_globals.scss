@@ -1,0 +1,73 @@
+.my-3 {
+    margin: 10rem 0;
+}
+
+.my-5 {
+    margin: 5rem 0;
+    padding: 5rem 0;
+}
+
+.mx-5 {
+    margin: 0 5rem;
+}
+
+.m-5 {
+    margin: 5rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-3 {
+    margin-top: 0.75rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.px-5 {
+    padding: 0 5rem;
+}
+
+.py-3 {
+    padding: 3rem 0;
+}
+
+.py-5 {
+    padding: 5rem 0;
+}
+
+.p-5 {
+    padding: 5rem;
+}
+

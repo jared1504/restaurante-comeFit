@@ -1,0 +1,23 @@
+.nav-component {
+    height: 5rem;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    gap: 3rem;
+
+    &__item {
+        font-weight: 600;
+        text-transform: capitalize;
+        text-decoration: none;
+        color: white;
+        padding-bottom: 2px;
+
+        &:hover {
+            border-bottom: 2px white solid;
+
+        }
+    }
+
+
+}

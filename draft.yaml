@@ -1,0 +1,112 @@
+models:
+  User:
+    name: string
+    email: string unique
+    password: string
+    type: integer
+    relationships:
+      hasMany: Cashier_sale, Waiter_sale, Chef_sale
+  
+  Table:
+    status: integer
+    relationships:
+      hasMany: Sale
+  
+  Supplier:
+    name: string
+    email: string
+    phone: string
+    relationships:
+      hasMany: Order
+  
+  Ingredient:
+    name: string
+    unit: string
+    stock: double
+    cost: double
+    relationships:
+      hasMany: Order_detail, Dish_ingredient
+
+  Order:
+    total: double
+    supplier_id: id foreign
+    user_id: id foreign
+    relationships:
+      hasMany: Order_detail
+
+  OrderDetail:
+    amount: double
+    price: double
+    subtotal: double
+    order_id: id foreign
+    ingredient_id: id foreign
+  
+  Category:
+    name: string
+    image: string
+    relationships:
+      hasMany: Dish
+
+  Dish:
+    name: string
+    description: string
+    image: string
+    cost: double
+    price: double
+    cal: integer
+    category_id: id foreign
+    relationships:
+      hasMany: Sale_detail, Dish_ingredient
+
+  DishIngredient:
+    amount: double
+    dish_id: id foreign
+    ingredient_id: id foreign
+
+  Sale:
+    status: integer
+    total: double
+    table_id: id foreign
+    relationships:
+      hasMany: Cashier_sale, Waiter_sale, Chef_sale
+
+  SaleDetail:
+    status: integer
+    amount: double
+    price: double
+    subtotal: double
+    dish_id: id foreign
+    sale_id: id foreign
+      
+
+  WaiterSale:
+    sale_id: id foreign
+    user_id: id foreign
+
+  CashierSale:
+    sale_id: id foreign
+    user_id: id foreign
+    
+  ChefSale:
+    sale_id: id foreign
+    user_id: id foreign
+
+
+
+controllers:
+  User:
+    resource: web
+  Table:
+    resource: web
+  Supplier:
+    resource: web
+  Ingredient:
+    resource: web
+  Order:
+    resource: web
+  Category:
+    resource: web
+  Dish:
+    resource: web
+  Sale:
+    resource: web

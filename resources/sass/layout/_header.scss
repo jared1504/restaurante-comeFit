@@ -1,0 +1,100 @@
+.header {
+    background: url("../../img/bg-header.jpg");
+    background-color: rgb(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem 5rem;
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        //align-items: center;
+
+        &__logo {
+            width: 20%;
+        }
+
+        &__nav-bar {
+            width: 80%;
+
+            &_-black {
+                background-color: alpha($color: #000000)
+            }
+        }
+
+
+
+        .titulo-header {
+            text-align: center;
+
+            h2 {
+                font-size: 5rem;
+                color: white;
+            }
+
+        }
+    }
+
+
+    .header-nohero {
+        background-color: rgb(0, 153, 26);
+        padding: 0 5rem;
+        box-shadow: rgb(0, 0, 0)0 0 15px 0;
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__logo {
+                width: 20%;
+            }
+
+            &__nav-bar {
+                width: 50%;
+            }
+
+            &__cta {
+                &__black {
+                    background-color: var(--primary-color);
+                }
+
+                &__red {
+                    background-color: red;
+                }
+
+                width: 20%;
+                color: var(--secondary-color);
+                font-weight: var(--bold);
+                font-size: 1.5rem;
+                text-decoration: none;
+                padding: 0.5rem 3rem;
+                text-align: center;
+                display: block;
+                border: none;
+                margin-top: 0.8rem;
+                border-radius: 0.5rem;
+                height: 4rem;
+
+                &:hover {
+                    background-color: rgb(80, 80, 80);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .titulo-header {
+            text-align: center;
+
+            h2 {
+                font-size: 5rem;
+                color: white;
+            }
+
+        }
+
+    }
+}

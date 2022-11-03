@@ -1,0 +1,149 @@
+.dashboard {
+    gap: 0;
+
+    &__aside {
+        width: 20%;
+        background-color: var(--bg-middle);
+        min-height: 100vh;
+    }
+
+    &__logo {
+        padding: 1rem;
+        gap: 0;
+
+        h2 {
+            color: var(--color-dark);
+        }
+
+        align-items: center;
+
+        img {
+            width: 30%;
+        }
+    }
+
+    &__nav {
+        &__item {
+            display: block;
+            margin: 0 1rem;
+            border-radius: 10rem;
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            color: var(--color-dark);
+            padding: 1rem 0;
+
+            &:hover {
+                background-color: var(--color-dark);
+                color: var(--bg-middle);
+            }
+        }
+
+        &__cerrar {
+            border: none;
+            background-color: transparent;
+            width: 90%;
+
+            &:hover {
+                background-color: red;
+                color: white;
+            }
+        }
+    }
+
+    &__body {
+        width: 80%;
+
+        &__nav {
+
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0.5rem 0;
+            background-color: var(--bg-middle);
+
+            &__item {
+                width: 40%;
+            }
+        }
+    }
+
+    &__slot {
+        padding: 1rem;
+        color: var(--color-dark);
+
+        p {
+            margin: 1rem 0;
+            font-size: 1.4rem;
+        }
+    }
+
+    &__table {
+        width: 100%;
+        text-align: center;
+
+        &__title {
+            background-color: var(--color-dark);
+            color: var(--bg-light);
+            font-weight: 700;
+            font-size: 1.5rem;
+
+            td {
+                padding: 1rem 0;
+            }
+
+            
+        }
+
+        &__body {
+            color: var(--color-dark);
+            font-size: 2rem;
+
+            td {
+                padding: 5px 0;
+                font-size: 1.2rem;
+                font-weight: 500;
+                background-color: var(--bg-light);
+            }
+        }
+
+        &__actions {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 1rem;
+        }
+
+        &__action {
+            padding: 5px 0;
+            width: 30%;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        &__show {
+            background-color: blue;
+        }
+
+        &__edit {
+            background-color: orangered;
+        }
+    }
+
+    &__notification {
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        margin: 1rem 0;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        &__success {
+            background-color: var(--bg-light);
+            color: var(--color-dark);
+            border: var(--color-dark) 1px solid;
+        }
+    }
+}
