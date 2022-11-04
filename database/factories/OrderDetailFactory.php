@@ -25,7 +25,7 @@ class OrderDetailFactory extends Factory
     public function definition()
     {
         $price=$this->faker->randomFloat(0, 0, 999.);
-        $amount=$this->faker->randomFloat(0, 0, 999.);
+        $amount=$this->faker->randomFloat(0, 0, 99.);
         return [
             'amount' => $amount,
             'price' => $price,

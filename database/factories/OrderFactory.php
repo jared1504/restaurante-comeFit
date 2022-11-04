@@ -25,7 +25,7 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            'total' => $this->faker->randomFloat(0, 0, 9999999999.),
+            'total' => $this->faker->randomFloat(0, 0, 999.),
             'supplier_id' => $this->faker->numberBetween(1, 5),
             'user_id' =>  $this->faker->numberBetween(1, 10),
         ];

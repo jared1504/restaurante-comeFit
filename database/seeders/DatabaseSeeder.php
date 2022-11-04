@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password'=>Hash::make('password'),
         ]);
-        /* User::factory(10)->create();
+        User::factory(10)->create();
         Supplier::factory(5)->create();
         Category::factory(5)->create();
         Ingredient::factory(50)->create();
@@ -45,6 +45,6 @@ class DatabaseSeeder extends Seeder
         DishIngredient::factory(50)->create();
         WaiterSale::factory(10)->create();
         ChefSale::factory(10)->create();
-        CashierSale::factory(10)->create(); */
+        CashierSale::factory(10)->create();
     }
 }

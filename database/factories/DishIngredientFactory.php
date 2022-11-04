@@ -25,7 +25,7 @@ class DishIngredientFactory extends Factory
     public function definition()
     {
         return [
-            'amount' => $this->faker->randomFloat(0, 0, 999.),
+            'amount' => $this->faker->randomFloat(0, 0, 99.),
             'dish_id' =>$this->faker->numberBetween(1, 50),
             'ingredient_id' =>$this->faker->numberBetween(1, 50),
         ];

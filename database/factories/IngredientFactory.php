@@ -25,8 +25,8 @@ class IngredientFactory extends Factory
         return [
             'name' => $this->faker->word,
             'unit' => $this->faker->randomElement(['litro', 'gramo']),
-            'stock' => $this->faker->randomFloat(0, 0, 999.),
-            'cost' => $this->faker->randomFloat(0, 0, 999.),
+            'stock' => $this->faker->randomFloat(0, 0, 99.),
+            'cost' => $this->faker->randomFloat(0, 0, 99.),
         ];
     }
 }
