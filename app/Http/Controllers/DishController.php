@@ -58,7 +58,19 @@ class DishController extends Controller
             'dishIngredients.*' => 'numeric|nullable',
         ]);
 
+        //validar que por lo menos haya un ingrediente
+        $aux = 0;
+        foreach ($request->dishIngredients as $key => $value) {
+            $aux += $value;
+        }
 
+        if ($aux <= 0) {
+            $request->session()->flash('message', "Debe agregar por lo menos un ingrediente");
+            $request->session()->flash('type', "danger");
+
+            return back();
+        }
+        
         //guardar imagen
         $imagen = $request->file('image');
         $nombreImagen = Str::uuid() . "." . $imagen->extension();
@@ -80,7 +92,7 @@ class DishController extends Controller
 
         //guardar los ingredientes
         foreach ($request->dishIngredients as $key => $value) {
-            if ($value != null) {
+            if ($value != null && $value > 0) {
                 $dishIngredient = new  DishIngredient();
                 $dishIngredient->amount = $value;
                 $dishIngredient->dish_id = $dish->id;
@@ -147,7 +159,18 @@ class DishController extends Controller
             'dishIngredients' => 'required|array',
             'dishIngredients.*' => 'numeric|nullable',
         ]);
+        //validar que por lo menos haya un ingrediente
+        $aux = 0;
+        foreach ($request->dishIngredients as $key => $value) {
+            $aux += $value;
+        }
 
+        if ($aux <= 0) {
+            $request->session()->flash('message', "Debe agregar por lo menos un ingrediente");
+            $request->session()->flash('type', "danger");
+
+            return back();
+        }
 
         //guardar imagen
         if ($request->image) {
@@ -179,13 +202,13 @@ class DishController extends Controller
         $cost = 0;
         //guardar los ingredientes
         foreach ($request->dishIngredients as $key => $value) {
-            if ($value != null && $value != 0) {
+            if ($value != null && $value > 0) {
                 $dishIngredient = new  DishIngredient();
                 $dishIngredient->amount = $value;
                 $dishIngredient->dish_id = $dish->id;
                 $dishIngredient->ingredient_id = $key;
                 $dishIngredient->save();
-                $cost+= $dishIngredient->amount* $dishIngredient->ingredient->cost;
+                $cost += $dishIngredient->amount * $dishIngredient->ingredient->cost;
             }
         }
         $dish->cost = $cost;

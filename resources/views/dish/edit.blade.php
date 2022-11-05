@@ -13,6 +13,11 @@ $items = [
 <x-dashboard :items="$items">
     <h2>Actualizar Platillo</h2>
     <p>Actualiza un platillo</p>
+    @if(session("message"))
+    <div class="dashboard__notification  dashboard__notification__{{session('type')}}">
+        {{session('message')}}
+    </div>
+    @endif
     <form action="{{route('dish.update',$dish)}}" method="POST" class="form" enctype="multipart/form-data">
         @csrf
         @method('PUT')
@@ -33,6 +38,19 @@ $items = [
             <label class="form__label" for="image">Imagen</label>
             <input class="form__input" type="file" name="image" id="image">
             @error('image') <div class="form__error">{{$message}}</div> @enderror
+        </div>
+        <div class="form__item">
+            <label class="form__label" for="cost">Costo</label>
+            <input disabled value="{{$dish->cost}}" class="form__input" type="number" name="cost" id="cost"
+                placeholder="Costo del platillo">
+            @error('cost') <div class="form__error">{{$message}}</div> @enderror
+        </div>
+
+        <div class="form__item">
+            <label class="form__label" for="price">Precio</label>
+            <input value="{{$dish->price}}" class="form__input" type="number" name="price" id="price"
+                placeholder="Precio del platillo">
+            @error('price') <div class="form__error">{{$message}}</div> @enderror
         </div>
         <div class="form__item">
             <label class="form__label" for="cal">Calorías</label>
@@ -68,19 +86,7 @@ $items = [
             @error('dishIngredient2s') <div class="form__error">{{$message}}</div> @enderror
         </div>
 
-        <div class="form__item">
-            <label class="form__label" for="cost">Costo</label>
-            <input disabled value="{{$dish->cost}}" class="form__input" type="number" name="cost" id="cost"
-                placeholder="Costo del platillo">
-            @error('cost') <div class="form__error">{{$message}}</div> @enderror
-        </div>
-
-        <div class="form__item">
-            <label class="form__label" for="price">Precio</label>
-            <input value="{{$dish->price}}" class="form__input" type="number" name="price" id="price"
-                placeholder="Precio del platillo">
-            @error('price') <div class="form__error">{{$message}}</div> @enderror
-        </div>
+       
         <div class="form__submit">
             <input class="form__submit__input" type="submit" value="Actualizar Platillo">
         </div>

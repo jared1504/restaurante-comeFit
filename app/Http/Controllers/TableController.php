@@ -33,11 +33,14 @@ class TableController extends Controller
      * @param \App\Http\Requests\TableStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TableStoreRequest $request)
+    public function store(Request $request)
     {
-        $table = Table::create($request->validated());
+        $table = new Table();
+        $table->status=1;
+        $table->save();
 
-        $request->session()->flash('table.id', $table->id);
+        $request->session()->flash('message', "Mesa agregada con éxito");
+        $request->session()->flash('type', "success");
 
         return redirect()->route('table.index');
     }
@@ -67,12 +70,19 @@ class TableController extends Controller
      * @param \App\Models\Table $table
      * @return \Illuminate\Http\Response
      */
-    public function update(TableUpdateRequest $request, Table $table)
+    public function update(Request $request, Table $table)
     {
-        $table->update($request->validated());
+        /* $table->update($request->validated());
 
-        $request->session()->flash('table.id', $table->id);
-
+        $request->session()->flash('table.id', $table->id); */
+        if ($table->status == 1) {
+            $table->status = 2;
+        } else {
+            $table->status = 1;
+        }
+        $table->save();
+      /*   $request->session()->flash('message', "Platillo registrado con éxito");
+        $request->session()->flash('type', "success"); */
         return redirect()->route('table.index');
     }
 

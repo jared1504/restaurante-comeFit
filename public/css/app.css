@@ -365,40 +365,6 @@ body {
   color: var(--color-dark);
 }
 
-.view {
-  width: 100%;
-}
-
-.view__image {
-  width: 50%;
-}
-
-.view__item {
-  font-size: 1.2rem;
-}
-
-.view__item span {
-  font-weight: 700;
-}
-
-.view__edit {
-  display: block;
-  width: 30%;
-  text-align: center;
-  margin-top: 2rem;
-  padding: 0.5rem 0;
-  background-color: var(--bg-semi-light);
-  color: var(--color-dark);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-.view__edit:hover {
-  background-color: var(--bg-dark);
-  color: var(--bg-light);
-}
-
 .header {
   background: url(/images/bg-header.jpg?13bdc7937fe0e8a9ad8e79b273a75fd2);
   background-color: rgba(0, 0, 0, 0.5);
@@ -896,6 +862,10 @@ body {
   font-weight: 700;
 }
 
+.dashboard__table__change {
+  width: 30%;
+}
+
 .dashboard__table__show {
   background-color: blue;
 }
@@ -917,7 +887,98 @@ body {
 .dashboard__notification__success {
   background-color: var(--bg-light);
   color: var(--color-dark);
-  border: var(--color-dark) 1px solid;
+  border: var(--color-dark) 3px solid;
+}
+
+.dashboard__notification__danger {
+  background-color: yellow;
+  color: red;
+  border: red 3px solid;
+}
+
+.view {
+  width: 100%;
+}
+
+.view__subtitle {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.view__image {
+  width: 50%;
+}
+
+.view__item {
+  font-size: 1.2rem;
+}
+
+.view__item span {
+  font-weight: 700;
+}
+
+.view__edit {
+  display: block;
+  width: 30%;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+  background-color: var(--bg-semi-light);
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.view__edit:hover {
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+}
+
+.view__form-table {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.view__form-table__submit {
+  width: 30%;
+  background-color: var(--color-dark);
+  padding: 1rem;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.view__form-table__submit:hover {
+  background-color: var(--bg-dark);
+}
+
+.view__tables {
+  background-color: var(--bg-light);
+  padding: 2rem 0rem 4rem 6rem;
+  /* padding-top: 2rem;
+  padding-bottom: 4rem; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3rem 0;
+}
+
+.view__tables__table {
+  width: 50%;
+  height: 250%;
+  color: white;
+  font-weight: 700;
+  border: none;
+}
+
+.view__tables__table__1 {
+  background-color: green;
+}
+
+.view__tables__table__2 {
+  background-color: red;
 }
 
 .login {

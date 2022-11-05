@@ -11,7 +11,7 @@ $items = [
     <x-home.nav_categories :categories="$categories" />
     <div class="mx-5 py-3 flex">
         <div class="dish flex ">
-            <img src="../img/{{$dish->image}}.jpg" alt="Imagen Platillo" class="dish__image">
+            <img src="../img/dishes/{{$dish->image}}" alt="Imagen Platillo" class="dish__image">
             <div>
                 <h2 class="dish__name">{{$dish->name}}</h2>
                 <p class="dish__price"><span>Precio: $</span> {{$dish->price}}</p>

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
-use App\Models\Category;
-use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class CategoryController extends Controller
 {
@@ -33,11 +35,36 @@ class CategoryController extends Controller
      * @param \App\Http\Requests\CategoryStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryStoreRequest $request)
+    public function store(Request $request)
     {
-        $category = Category::create($request->validated());
+        /* $category = Category::create($request->validated());
 
-        $request->session()->flash('category.id', $category->id);
+        $request->session()->flash('category.id', $category->id); */
+        $this->validate($request, [
+            'name' => 'required',
+            'image' => 'required',
+        ]);
+
+
+        //guardar imagen
+        $imagen = $request->file('image');
+        $nombreImagen = Str::uuid() . "." . $imagen->extension();
+        $imagenServidor = Image::make($imagen);
+        $imagenServidor->fit(500, 500);
+        $imagenPath = public_path('img/categories') . "/" . $nombreImagen;
+        $imagenServidor->save($imagenPath);
+
+        //guardar cambios
+        $category = new  Category();
+        $category->name = $request->name;
+        $category->image = $nombreImagen;
+        $category->save();
+
+
+
+        $request->session()->flash('message', "Categoría registrada con éxito");
+        $request->session()->flash('type', "success");
+
 
         return redirect()->route('category.index');
     }
@@ -67,11 +94,37 @@ class CategoryController extends Controller
      * @param \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryUpdateRequest $request, Category $category)
+    public function update(Request $request, Category $category)
     {
-        $category->update($request->validated());
+        /* $category->update($request->validated());
 
-        $request->session()->flash('category.id', $category->id);
+        $request->session()->flash('category.id', $category->id); */
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
+
+        //guardar imagen
+        if ($request->image) {
+            $imagen = $request->file('image');
+            $nombreImagen = Str::uuid() . "." . $imagen->extension();
+            $imagenServidor = Image::make($imagen);
+            $imagenServidor->fit(500, 500);
+            $imagenPath = public_path('img/categories') . "/" . $nombreImagen;
+            $imagenServidor->save($imagenPath);
+        } else {
+            $nombreImagen = $category->image;
+        }
+
+        //guardar cambios
+        $category->name = $request->name;
+        $category->image = $nombreImagen;
+        $category->save();
+
+
+        $request->session()->flash('message', "Categoría Actualizada con éxito");
+        $request->session()->flash('type', "success");
+
+
 
         return redirect()->route('category.index');
     }

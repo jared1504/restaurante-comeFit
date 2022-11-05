@@ -92,7 +92,7 @@
                 padding: 1rem 0;
             }
 
-            
+
         }
 
         &__body {
@@ -112,6 +112,8 @@
             display: flex;
             justify-content: space-evenly;
             gap: 1rem;
+
+            &__supplier {}
         }
 
         &__action {
@@ -120,6 +122,10 @@
             color: white;
             text-decoration: none;
             font-weight: 700;
+        }
+
+        &__change {
+            width: 30%;
         }
 
         &__show {
@@ -143,7 +149,99 @@
         &__success {
             background-color: var(--bg-light);
             color: var(--color-dark);
-            border: var(--color-dark) 1px solid;
+            border: var(--color-dark) 3px solid;
+        }
+
+        &__danger {
+            background-color: yellow;
+            color: red;
+            border: red 3px solid;
+        }
+    }
+}
+
+.view {
+    width: 100%;
+
+    &__subtitle {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    &__image {
+        width: 50%;
+    }
+
+
+    &__item {
+        font-size: 1.2rem;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__edit {
+        display: block;
+        width: 30%;
+        text-align: center;
+        margin-top: 2rem;
+        padding: .5rem 0;
+        background-color: var(--bg-semi-light);
+        color: var(--color-dark);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.2rem;
+
+        &:hover {
+            background-color: var(--bg-dark);
+            color: var(--bg-light);
+        }
+    }
+
+    &__form-table {
+        margin: 1rem 0;
+        display: flex;
+        justify-content: flex-end;
+
+        &__submit {
+            width: 30%;
+            background-color: var(--color-dark);
+            padding: 1rem;
+            border: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: white;
+
+            &:hover {
+                background-color: var(--bg-dark);
+            }
+        }
+    }
+
+    &__tables {
+        background-color: var(--bg-light);
+        padding: 2rem 0rem 4rem 6rem;
+        /* padding-top: 2rem;
+        padding-bottom: 4rem; */
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 3rem 0;
+
+        &__table {
+            width: 50%;
+            height: 250%;
+            color: white;
+            font-weight: 700;
+            border: none;
+
+            &__1 {
+                background-color: green;
+            }
+
+            &__2 {
+                background-color: red;
+            }
         }
     }
 }

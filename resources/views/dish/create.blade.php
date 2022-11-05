@@ -9,6 +9,11 @@ $items = [
 <x-dashboard :items="$items">
     <h2>Registrar Platillo</h2>
     <p>Registra un nuevo platillo</p>
+    @if(session("message"))
+    <div class="dashboard__notification  dashboard__notification__{{session('type')}}">
+        {{session('message')}}
+    </div>
+    @endif
     <form action="{{route('dish.store')}}" method="POST" class="form" enctype="multipart/form-data">
         @csrf
         <p class="form__title">Llena los campos para agregar un Platillo</p>
@@ -29,6 +34,12 @@ $items = [
             @error('image') <div class="form__error">{{$message}}</div> @enderror
         </div>
         <div class="form__item">
+            <label class="form__label" for="price">Precio</label>
+            <input value="{{old('price')}}" class="form__input" type="number" name="price" id="price"
+                placeholder="Precio del platillo">
+            @error('price') <div class="form__error">{{$message}}</div> @enderror
+        </div>
+        <div class="form__item">
             <label class="form__label" for="cal">Calorías</label>
             <input value="{{old('cal')}}" class="form__input" type="number" name="cal" id="cal"
                 placeholder="Calorías del platillo">
@@ -44,7 +55,6 @@ $items = [
             </select>
             @error('category_id') <div class="form__error">{{$message}}</div> @enderror
         </div>
-
         <div class="form__item">
             <label class="form__label" for="categoy_id">Seleccione los ingredientes</label>
 
@@ -61,12 +71,7 @@ $items = [
         </div>
 
 
-        <div class="form__item">
-            <label class="form__label" for="price">Precio</label>
-            <input value="{{old('price')}}" class="form__input" type="number" name="price" id="price"
-                placeholder="Precio del platillo">
-            @error('price') <div class="form__error">{{$message}}</div> @enderror
-        </div>
+        
         <div class="form__submit">
             <input class="form__submit__input" type="submit" value="Registrar Platillo">
         </div>

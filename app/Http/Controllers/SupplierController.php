@@ -33,11 +33,26 @@ class SupplierController extends Controller
      * @param \App\Http\Requests\SupplierStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SupplierStoreRequest $request)
+    public function store(Request $request)
     {
-        $supplier = Supplier::create($request->validated());
+        /* $supplier = Supplier::create($request->validated());
 
-        $request->session()->flash('supplier.id', $supplier->id);
+        $request->session()->flash('supplier.id', $supplier->id); */
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
+        ]);
+
+        //guardar cambios
+        $supplier = new  Supplier();
+        $supplier->name = $request->name;
+        $supplier->email = $request->email;
+        $supplier->phone = $request->phone;
+        $supplier->save();
+
+        $request->session()->flash('message', "Proveedor registrado con éxito");
+        $request->session()->flash('type', "success");
 
         return redirect()->route('supplier.index');
     }
@@ -67,11 +82,25 @@ class SupplierController extends Controller
      * @param \App\Models\Supplier $supplier
      * @return \Illuminate\Http\Response
      */
-    public function update(SupplierUpdateRequest $request, Supplier $supplier)
+    public function update(Request $request, Supplier $supplier)
     {
-        $supplier->update($request->validated());
+       /*  $supplier->update($request->validated());
 
-        $request->session()->flash('supplier.id', $supplier->id);
+        $request->session()->flash('supplier.id', $supplier->id); */
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
+        ]);
+
+        //guardar cambios
+        $supplier->name = $request->name;
+        $supplier->email = $request->email;
+        $supplier->phone = $request->phone;
+        $supplier->save();
+
+        $request->session()->flash('message', "Proveedor Actualizado con éxito");
+        $request->session()->flash('type', "success");
 
         return redirect()->route('supplier.index');
     }

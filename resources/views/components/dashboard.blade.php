@@ -13,7 +13,7 @@
                 <a class="dashboard__nav__item" href="{{route('order.index')}}">Pedidos</a>
                 <a class="dashboard__nav__item" href="{{route('supplier.index')}}">Proveedores</a>
                 <a class="dashboard__nav__item" href="{{route('table.index')}}">Mesas</a>
-                <a class="dashboard__nav__item" href="{{route('user.index')}}">Usuarios</a>
+                <a class="dashboard__nav__item" href="{{route('user.index')}}">Empleados</a>
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <input type="submit" value="Cerrar Sesión" class="dashboard__nav__item dashboard__nav__cerrar">
