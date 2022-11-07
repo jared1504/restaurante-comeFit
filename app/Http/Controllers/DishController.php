@@ -75,7 +75,7 @@ class DishController extends Controller
         $imagen = $request->file('image');
         $nombreImagen = Str::uuid() . "." . $imagen->extension();
         $imagenServidor = Image::make($imagen);
-        $imagenServidor->fit(500, 500);
+        $imagenServidor->fit(400, 400);
         $imagenPath = public_path('img/dishes') . "/" . $nombreImagen;
         $imagenServidor->save($imagenPath);
 
@@ -177,7 +177,7 @@ class DishController extends Controller
             $imagen = $request->file('image');
             $nombreImagen = Str::uuid() . "." . $imagen->extension();
             $imagenServidor = Image::make($imagen);
-            $imagenServidor->fit(500, 500);
+            $imagenServidor->fit(400, 400);
             $imagenPath = public_path('img/dishes') . "/" . $nombreImagen;
             $imagenServidor->save($imagenPath);
         } else {
