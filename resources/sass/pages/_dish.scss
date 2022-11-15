@@ -3,11 +3,16 @@
 
     &__name {
         text-transform: capitalize;
+        color: black;
     }
 
     &__image {
-        width: 40%;
+        width: 100%;
         height: auto;
+        img{
+            border-radius: 1rem;
+        }
+        
     }
 
     color: black;
@@ -33,20 +38,28 @@
 
     &__aside {
         width: 40%;
-        &__title{
+
+        &__title {
             text-align: center;
-            color: var(--color-dark);
-            font-size: 1.5rem;
+            color: black;
+            font-size: 2rem;
             margin-bottom: 1rem;
+        }
+
+        &__image {
+            width: 40%;
+            height: auto;
+            border-radius: 5px;
         }
     }
 
     &__card {
         margin-bottom: 1rem;
         padding: 0.5rem;
-        background-color: var(--bg-middle);
-        color: var(--color-dark);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
         text-decoration: none;
+        border-radius: 1rem;
 
         &__name {
             font-weight: 700;

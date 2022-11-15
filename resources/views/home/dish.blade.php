@@ -10,8 +10,10 @@ $items = [
     <x-partials.header :items="$items" />
     <x-home.nav_categories :categories="$categories" />
     <div class="mx-5 py-3 flex">
-        <div class="dish flex ">
-            <img src="../img/dishes/{{$dish->image}}" alt="Imagen Platillo" class="dish__image">
+        <div class="dish flex">
+            <div class="dish__image">
+                <img src="../img/dishes/{{$dish->image}}" alt="Imagen Platillo">
+            </div>            
             <div>
                 <h2 class="dish__name">{{$dish->name}}</h2>
                 <p class="dish__price"><span>Precio: $</span> {{$dish->price}}</p>
@@ -26,6 +28,6 @@ $items = [
             @endforeach
         </aside>
     </div>
-    <x-categories :categories="$categories"></x-categories>
+    <x-categories :categories="$categories"/>
     <x-partials.footer :items="$items" />
 </x-layout>

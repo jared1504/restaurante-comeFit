@@ -1,31 +1,38 @@
 .home-categories {
-    padding: 1rem 5rem;
-background-color: var(--bg-light);
+    margin-top: 1rem;
+    width: 100%;
+
     &__title {
         text-align: center;
         margin-bottom: 1rem;
+        color: black;
     }
 
+    img {
+        border-radius: 5px;
+    }
 
     &__card {
         text-decoration: none;
-        background-color: var(--bg-semi-light);
+        background-color: rgba(0, 0, 0, 0.8);
         padding: 1rem;
+        border-radius: 1rem;
+        margin: 0 1rem;
 
         p {
             margin-top: 1rem;
             padding: 2px 0;
             font-size: 1.5rem;
-            color: var(--color-middle);
+            color: white;
             font-weight: 600;
             text-transform: capitalize;
             text-align: center;
 
             &:hover {
                 padding: 0;
-                color: var(--color-dark);
-                border-top: 1px var(--color-dark) solid;
-                border-bottom: 1px var(--color-dark) solid;
+                border: none;
+                border-top: 1px white solid;
+                border-bottom: 1px white solid;
             }
         }
 
@@ -38,10 +45,12 @@ background-color: var(--bg-light);
 
     &__title {
         text-align: center;
+        color: black;
     }
 
     &__img {
         width: 40%;
+        border-radius: 15rem;
     }
 
     p {

@@ -32,5 +32,10 @@ $items = [
             </td>
         </tr>
         @endforeach
+        <tfoot>
+            <tr>
+                <th colspan="5">{{ $suppliers->links() }}</th>
+            </tr>
+        </tfoot>
     </table>
 </x-dashboard>

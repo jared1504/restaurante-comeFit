@@ -48,5 +48,10 @@ $items = [
             </td>
         </tr>
         @endforeach
+        <tfoot>
+            <tr>
+                <th colspan="3">{{ $users->links() }}</th>
+            </tr>
+        </tfoot>
     </table>
 </x-dashboard>

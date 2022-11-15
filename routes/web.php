@@ -19,8 +19,12 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/categoria/{id}', [HomeController::class, 'show'])->name('home.show');
 Route::get('/platillo/{id}', [HomeController::class, 'dish'])->name('home.dish');
+Route::group(['middleware' => ['role:admin']], function () {
+    
+    Route::resource('user', App\Http\Controllers\UserController::class);
+    
+});
 
-Route::resource('user', App\Http\Controllers\UserController::class);
 
 Route::resource('table', App\Http\Controllers\TableController::class);
 

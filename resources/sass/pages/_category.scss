@@ -1,5 +1,5 @@
 .nav-categories {
-    background-color: var(--color-dark);
+    background-color: black;
     display: flex;
     justify-content: space-evenly;
 
@@ -8,14 +8,14 @@
         text-decoration: none;
         text-transform: capitalize;
         text-align: center;
-        color: var(--bg-light);
+        color: white;
         font-weight: 700;
         font-size: 1.5rem;
         padding: 1rem 0rem;
 
         &:hover {
-            background-color: var(--bg-light);
-            color: var(--color-dark);
+            background-color: rgba(184, 184, 184);
+            color: black;
         }
     }
 }
@@ -32,11 +32,14 @@
 }
 
 .card-product {
+    border-radius: 1rem;
     text-decoration: none;
-    background-color: var(--bg-semi-light);
+    background-color: rgba(0,0,0,0.8);
     padding: 1rem;
-    color: var(--color-dark);
-
+    color:white;
+img{
+    border-radius: 5px;
+}
     &__name {
         margin: 5px 0;
         font-weight: 600;

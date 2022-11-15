@@ -18,6 +18,8 @@ use App\Models\OrderDetail;
 use App\Models\DishIngredient;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,7 +30,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create([
+        /*     User::factory()->create([
             'email' => 'admin@admin.com',
             'password'=>Hash::make('password'),
         ]);
@@ -45,6 +47,11 @@ class DatabaseSeeder extends Seeder
         DishIngredient::factory(50)->create();
         WaiterSale::factory(10)->create();
         ChefSale::factory(10)->create();
-        CashierSale::factory(10)->create();
+        CashierSale::factory(10)->create(); */
+
+
+
+        /* $role = Role::create(['admin' => 'admin']);
+        $permission = Permission::create(['name' => 'edit articles']); */
     }
 }

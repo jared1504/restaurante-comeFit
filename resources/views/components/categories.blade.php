@@ -5,7 +5,6 @@
         <a href="{{route('home.show',$category)}}" class="home-categories__card">
             <img class="card__image" src="../img/categories/{{$category->image}}" alt="">
             <p class="card__name">{{$category->name}}</p>
-            <p>{{$category->description}}</p>
         </a>
 
         @endforeach

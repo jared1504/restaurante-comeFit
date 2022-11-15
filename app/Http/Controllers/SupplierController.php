@@ -15,7 +15,7 @@ class SupplierController extends Controller
      */
     public function index(Request $request)
     {
-        $suppliers = Supplier::all();
+        $suppliers = Supplier::paginate(10);
 
         return view('supplier.index', compact('suppliers'));
     }

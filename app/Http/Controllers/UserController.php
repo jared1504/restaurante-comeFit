@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::where('type', '!=', 0)->orderBy('type')->get();
+        $users = User::where('type', '!=', 0)->orderBy('type')->paginate(10);
 
         return view('user.index', compact('users'));
     }

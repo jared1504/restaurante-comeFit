@@ -50,7 +50,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   grid-auto-rows: minmax(100px, auto);
 }
@@ -69,6 +69,10 @@
 
 .p-5 {
   padding: 5rem;
+}
+
+.font-medium {
+  color: white;
 }
 
 :root {
@@ -206,12 +210,12 @@ h3 {
 
 h1 {
   font-size: 44px;
-  color: var(--color-dark);
+  color: black;
 }
 
 h2 {
   font-size: 38px;
-  color: var(--color-dark);
+  color: black;
 }
 
 body {
@@ -225,7 +229,7 @@ body {
 }
 
 .footer {
-  background-color: var(--color-dark);
+  background-color: black;
   padding: 1rem 0;
 }
 
@@ -291,6 +295,7 @@ body {
 .form__ingredients__label {
   margin-left: 10px;
   font-size: 1.2rem;
+  color: black;
 }
 
 .form__login {
@@ -313,7 +318,7 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1px;
-  color: var(--color-dark);
+  color: black;
 }
 
 .form__input {
@@ -353,7 +358,7 @@ body {
   width: 50%;
   padding: 0.5rem 0;
   border: none;
-  background-color: var(--color-dark);
+  background-color: darkblue;
   color: white;
   font-size: 1.5rem;
   font-weight: 700;
@@ -361,8 +366,7 @@ body {
 }
 
 .form__submit__input:hover {
-  background-color: var(--bg-semi-light);
-  color: var(--color-dark);
+  background-color: blue;
 }
 
 .header {
@@ -557,29 +561,37 @@ body {
 
 .nav-component__item:hover {
   border-bottom: 2px white solid;
+  border-top: 2px solid white;
 }
 
 .home-categories {
-  padding: 1rem 5rem;
-  background-color: var(--bg-light);
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .home-categories__title {
   text-align: center;
   margin-bottom: 1rem;
+  color: black;
+}
+
+.home-categories img {
+  border-radius: 5px;
 }
 
 .home-categories__card {
   text-decoration: none;
-  background-color: var(--bg-semi-light);
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 1rem;
+  border-radius: 1rem;
+  margin: 0 1rem;
 }
 
 .home-categories__card p {
   margin-top: 1rem;
   padding: 2px 0;
   font-size: 1.5rem;
-  color: var(--color-middle);
+  color: white;
   font-weight: 600;
   text-transform: capitalize;
   text-align: center;
@@ -587,9 +599,9 @@ body {
 
 .home-categories__card p:hover {
   padding: 0;
-  color: var(--color-dark);
-  border-top: 1px var(--color-dark) solid;
-  border-bottom: 1px var(--color-dark) solid;
+  border: none;
+  border-top: 1px white solid;
+  border-bottom: 1px white solid;
 }
 
 .nosotros {
@@ -598,10 +610,12 @@ body {
 
 .nosotros__title {
   text-align: center;
+  color: black;
 }
 
 .nosotros__img {
   width: 40%;
+  border-radius: 15rem;
 }
 
 .nosotros p {
@@ -611,7 +625,7 @@ body {
 }
 
 .nav-categories {
-  background-color: var(--color-dark);
+  background-color: black;
   display: flex;
   justify-content: space-evenly;
 }
@@ -621,15 +635,15 @@ body {
   text-decoration: none;
   text-transform: capitalize;
   text-align: center;
-  color: var(--bg-light);
+  color: white;
   font-weight: 700;
   font-size: 1.5rem;
   padding: 1rem 0rem;
 }
 
 .nav-categories__item:hover {
-  background-color: var(--bg-light);
-  color: var(--color-dark);
+  background-color: rgb(184, 184, 184);
+  color: black;
 }
 
 .page-category {
@@ -643,10 +657,15 @@ body {
 }
 
 .card-product {
+  border-radius: 1rem;
   text-decoration: none;
-  background-color: var(--bg-semi-light);
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 1rem;
-  color: var(--color-dark);
+  color: white;
+}
+
+.card-product img {
+  border-radius: 5px;
 }
 
 .card-product__name {
@@ -682,11 +701,16 @@ body {
 
 .dish__name {
   text-transform: capitalize;
+  color: black;
 }
 
 .dish__image {
-  width: 40%;
+  width: 100%;
   height: auto;
+}
+
+.dish__image img {
+  border-radius: 1rem;
 }
 
 .dish__price {
@@ -712,17 +736,24 @@ body {
 
 .dish__aside__title {
   text-align: center;
-  color: var(--color-dark);
-  font-size: 1.5rem;
+  color: black;
+  font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+.dish__aside__image {
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
 }
 
 .dish__card {
   margin-bottom: 1rem;
   padding: 0.5rem;
-  background-color: var(--bg-middle);
-  color: var(--color-dark);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   text-decoration: none;
+  border-radius: 1rem;
 }
 
 .dish__card__name {
@@ -748,7 +779,7 @@ body {
 
 .dashboard__aside {
   width: 20%;
-  background-color: var(--bg-middle);
+  background-color: darkblue;
   min-height: 100vh;
 }
 
@@ -759,7 +790,7 @@ body {
 }
 
 .dashboard__logo h2 {
-  color: var(--color-dark);
+  color: white;
 }
 
 .dashboard__logo img {
@@ -774,13 +805,13 @@ body {
   font-weight: 700;
   text-decoration: none;
   text-align: center;
-  color: var(--color-dark);
+  color: white;
   padding: 1rem 0;
 }
 
 .dashboard__nav__item:hover {
-  background-color: var(--color-dark);
-  color: var(--bg-middle);
+  background-color: white;
+  color: darkblue;
 }
 
 .dashboard__nav__cerrar {
@@ -802,7 +833,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   padding: 0.5rem 0;
-  background-color: var(--bg-middle);
+  background-color: darkblue;
 }
 
 .dashboard__body__nav__item {
@@ -811,12 +842,12 @@ body {
 
 .dashboard__slot {
   padding: 1rem;
-  color: var(--color-dark);
 }
 
 .dashboard__slot p {
   margin: 1rem 0;
   font-size: 1.4rem;
+  color: black;
 }
 
 .dashboard__table {
@@ -824,9 +855,15 @@ body {
   text-align: center;
 }
 
+.dashboard__table tfoot {
+  background-color: darkblue;
+  color: white;
+  text-align: left;
+}
+
 .dashboard__table__title {
-  background-color: var(--color-dark);
-  color: var(--bg-light);
+  background-color: darkblue;
+  color: white;
   font-weight: 700;
   font-size: 1.5rem;
 }
@@ -836,15 +873,19 @@ body {
 }
 
 .dashboard__table__body {
-  color: var(--color-dark);
+  color: black;
   font-size: 2rem;
+}
+
+.dashboard__table__body tr {
+  border-bottom: darkblue 1px solid;
 }
 
 .dashboard__table__body td {
   padding: 5px 0;
   font-size: 1.2rem;
   font-weight: 500;
-  background-color: var(--bg-light);
+  border-bottom: darkblue 1.5px solid;
 }
 
 .dashboard__table__actions {
@@ -923,16 +964,15 @@ body {
   text-align: center;
   margin-top: 2rem;
   padding: 0.5rem 0;
-  background-color: var(--bg-semi-light);
-  color: var(--color-dark);
+  background-color: darkblue;
+  color: white;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.2rem;
 }
 
 .view__edit:hover {
-  background-color: var(--bg-dark);
-  color: var(--bg-light);
+  background-color: blue;
 }
 
 .view__form-table {
@@ -943,7 +983,7 @@ body {
 
 .view__form-table__submit {
   width: 30%;
-  background-color: var(--color-dark);
+  background-color: darkblue;
   padding: 1rem;
   border: none;
   font-weight: 700;
@@ -952,11 +992,10 @@ body {
 }
 
 .view__form-table__submit:hover {
-  background-color: var(--bg-dark);
+  background-color: blue;
 }
 
 .view__tables {
-  background-color: var(--bg-light);
   padding: 2rem 0rem 4rem 6rem;
   /* padding-top: 2rem;
   padding-bottom: 4rem; */
@@ -979,6 +1018,93 @@ body {
 
 .view__tables__table__2 {
   background-color: red;
+}
+
+.paginator-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.paginator-nav__showing {
+  color: white;
+}
+
+.paginator-nav__header {
+  display: flex;
+  justify-content: space-between;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  /* flex: 1 1 0%; */
+}
+
+.paginator-nav__header a:link,
+.paginator-nav__header a:visited {
+  color: var(--primary-color-300) !important;
+}
+
+.paginator-nav__firstpage {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: var(--neutral-color-ligth);
+  border: 1px solid var(--accent-color-400);
+  cursor: default;
+  padding: 4px 12px;
+}
+
+.paginator-nav__not-firstpage {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--accent-color-400);
+  cursor: pointer;
+  padding: 4px 12px;
+}
+
+.paginator-nav__nextpage {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+}
+
+.paginator-nav__not-nextpage {
+  color: var(--neutral-color-ligth);
+  border: 1px solid var(--accent-color-400);
+  padding: 4px 12px;
+}
+
+.paginator-nav__currentpage {
+  color: var(--neutral-color-ligth);
+  background-color: var(--accent-color-400);
+  border: 1px solid var(--accent-color-400);
+  padding: 4px 12px;
+}
+
+.paginator-nav__page {
+  border: 1px solid var(--accent-color-400);
+  padding: 4px 12px;
+}
+
+svg {
+  fill: currentColor !important;
+  cursor: pointer;
+}
+
+.user-table__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.user-table__edit-icon,
+.user-table__remove-icon,
+.user-table__info-icon {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .login {

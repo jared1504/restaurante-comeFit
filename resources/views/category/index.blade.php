@@ -32,5 +32,10 @@ $items = [
             </td>
         </tr>
         @endforeach
+        <tfoot>
+            <tr>
+                <th colspan="5">{{ $categories->links() }}</th>
+            </tr>
+        </tfoot>
     </table>
 </x-dashboard>

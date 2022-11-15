@@ -29,12 +29,16 @@ $items = [
             <td>$ {{$dish->cost}}</td>
             <td>$ {{$dish->price}}</td>
             <td class="dashboard__table__actions">
-                <a class="dashboard__table__action dashboard__table__show"
-                    href="{{route('dish.show', $dish)}}">Ver</a>
+                <a class="dashboard__table__action dashboard__table__show" href="{{route('dish.show', $dish)}}">Ver</a>
                 <a class="dashboard__table__action dashboard__table__edit"
                     href="{{route('dish.edit', $dish)}}">Editar</a>
             </td>
         </tr>
         @endforeach
+        <tfoot>
+            <tr>
+                <th colspan="5">{{ $dishes->links() }}</th>
+            </tr>
+        </tfoot>
     </table>
 </x-dashboard>

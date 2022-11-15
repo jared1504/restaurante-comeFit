@@ -63,7 +63,7 @@ $items = [
                 <div class="form__ingredients">
                     <input class="form__ingredients__input" value="{{ old('dishIngredients[@php $ingredient->id @endphp]') }}"
                         type="text" name="dishIngredients[{{$ingredient->id}}]">
-                    <label class="form__ingredients__label">{{$ingredient->unit}}s de {{$ingredient->name}}</label>
+                    <label class="form__ingredients__label ">{{$ingredient->unit}}s de {{$ingredient->name}}</label>
                 </div>
                 @endforeach
             </div>

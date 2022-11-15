@@ -20,9 +20,9 @@ class DishController extends Controller
      */
     public function index(Request $request)
     {
-        $dishes = Dish::all();
+        $dishes = Dish::paginate(10);
 
-        return view('dish.index', compact('dishes'));
+        return view('dish.index', ['dishes' => $dishes]);
     }
 
     /**
@@ -70,7 +70,7 @@ class DishController extends Controller
 
             return back();
         }
-        
+
         //guardar imagen
         $imagen = $request->file('image');
         $nombreImagen = Str::uuid() . "." . $imagen->extension();
@@ -185,15 +185,6 @@ class DishController extends Controller
         }
 
 
-        //guardar cambios
-        $dish->name = $request->name;
-        $dish->description = $request->description;
-        $dish->image = $nombreImagen;
-        $dish->cost = 0;
-        $dish->price = $request->price;
-        $dish->cal = $request->cal;
-        $dish->category_id = $request->category_id;
-        $dish->save();
 
         //eliminar los registros existentes
         foreach (DishIngredient::where('dish_id', $dish->id)->get() as $aux) {
@@ -211,7 +202,15 @@ class DishController extends Controller
                 $cost += $dishIngredient->amount * $dishIngredient->ingredient->cost;
             }
         }
+
+        //guardar cambios
+        $dish->name = $request->name;
+        $dish->description = $request->description;
+        $dish->image = $nombreImagen;
         $dish->cost = $cost;
+        $dish->price = $request->price;
+        $dish->cal = $request->cal;
+        $dish->category_id = $request->category_id;
         $dish->save();
         $request->session()->flash('message', "Platillo Actualizado con éxito");
         $request->session()->flash('type', "success");

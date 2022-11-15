@@ -18,6 +18,7 @@
         &__label {
             margin-left: 10px;
             font-size: 1.2rem;
+            color: black;
         }
     }
 
@@ -50,7 +51,7 @@
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 1px;
-        color: var(--color-dark);
+        color: black;
     }
 
     &__input {
@@ -88,15 +89,14 @@
             width: 50%;
             padding: .5rem 0;
             border: none;
-            background-color: var(--color-dark);
+            background-color: darkblue;
             color: white;
             font-size: 1.5rem;
             font-weight: 700;
             border-radius: 1rem;
 
             &:hover {
-                background-color: var(--bg-semi-light);
-                color: var(--color-dark);
+                background-color: blue;
             }
         }
 

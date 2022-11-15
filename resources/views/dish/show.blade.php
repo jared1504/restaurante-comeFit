@@ -9,7 +9,10 @@ $items = [
     <h2>Ver Platillo</h2>
     <p>Ve los datos de un platillo</p>
     <div class="flex">
-        <img class="view__image" src="../img/dishes/{{$dish->image}}" alt="Imagen platillo {{$dish->name}}">
+        <div class="view__image">
+                    <img  src="../img/dishes/{{$dish->image}}" alt="Imagen platillo {{$dish->name}}">
+
+        </div>
         <div class="view">
             <p class="view__item"><span>Código: </span>{{$dish->id}}</p>
             <p class="view__item"><span>Nombre: </span>{{$dish->name}}</p>
