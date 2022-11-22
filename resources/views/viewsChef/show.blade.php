@@ -1,10 +1,9 @@
 @php
 $items = [
-['route'=> 'sale.index', 'text' => 'Ventas del día'],
-['route'=> 'sale.filter', 'text' => 'Historial de ventas'],
+['route'=> 'chef.index', 'text' => 'Pendientes'],
+['route'=> 'chef.filter', 'text' => 'Preparadas'],
 ];
 @endphp
-
 <x-dashboard :items="$items">
     <h2>Ver venta</h2>
     <p>Ve el detalle de una venta</p>
@@ -16,8 +15,6 @@ $items = [
     @endif
 
     <p class="salewaiter__description"><span>Folio: </span>{{$sale->id}}</p>
-    <p class="salewaiter__description"><span>Total: </span>${{$sale->total}}</p>
-    <p class="salewaiter__description"><span>Mesa: </span>{{$sale->table_id}}</p>
     @php
     switch($sale->status){
     case 1:
@@ -46,6 +43,9 @@ $items = [
         <tr class="dashboard__table__title">
             <td>Cantidad</td>
             <td>Nombre</td>
+            @if ($sale->status=="En Preparación")
+            <td>Estado</td>
+            @endif
 
             <td>Acciones</td>
         </tr>
@@ -53,6 +53,28 @@ $items = [
         <tr class="dashboard__table__body">
             <td>{{$saleDetail->amount}}</td>
             <td>{{$saleDetail->dish->name}}</td>
+
+            @if ($sale->status=="En Preparación")
+            @php
+            switch($saleDetail->status){
+            case 1:
+            $saleDetail->status="Preparando";
+            break;
+            case 2:
+            $saleDetail->status="Listo";
+            break;
+            }
+            @endphp
+            <td class="dashboard__table__enlace">
+                <form action="{{route('chef.update', $saleDetail)}}" method="POST" class="dashboard__table__enlace">
+                    @csrf
+                    @method('PUT')
+                    <input class="dashboard__table__enlace__a dashboard__table__enlace__{{$saleDetail->status}}"
+                        type="submit" value="{{$saleDetail->status}}">
+                </form>
+            </td>
+            @endif
+
             <td class="dashboard__table__actions">
                 <a class="dashboard__table__action dashboard__table__show"
                     href="{{route('dish.show', $saleDetail->dish)}}">Ver</a>

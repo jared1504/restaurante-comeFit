@@ -45,6 +45,11 @@ class Sale extends Model
     {
         return $this->hasMany(ChefSale::class);
     }
+     
+    public function saleDetails()
+    {
+        return $this->hasMany(SaleDetail::class);
+    }
 
     public function table()
     {

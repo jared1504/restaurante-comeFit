@@ -30,10 +30,10 @@ $items = [
                 $user->type="Administrador";
                 break;
                 case 2:
-                $user->type="Mesero";
+                $user->type="Cajero";
                 break;
                 case 3:
-                $user->type="Cajero";
+                $user->type="Mesero";
                 break;
                 case 4:
                 $user->type="Chef";

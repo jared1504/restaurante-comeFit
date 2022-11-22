@@ -28,7 +28,7 @@
 }
 
 .mt-5 {
-  margin-top: 5rem;
+  margin-top: 1.5rem;
 }
 
 .mb-2 {
@@ -888,6 +888,31 @@ body {
   border-bottom: darkblue 1.5px solid;
 }
 
+.dashboard__table__enlace__a {
+  width: 50%;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+}
+
+.dashboard__table__enlace__Preparando {
+  background-color: red;
+}
+
+.dashboard__table__enlace__Preparando:hover {
+  background-color: darkred;
+}
+
+.dashboard__table__enlace__Listo {
+  background-color: blue;
+}
+
+.dashboard__table__enlace__Listo:hover {
+  background-color: darkblue;
+}
+
 .dashboard__table__actions {
   width: 100%;
   display: flex;
@@ -909,6 +934,10 @@ body {
 
 .dashboard__table__show {
   background-color: blue;
+}
+
+.dashboard__table__show:hover {
+  background-color: darkblue;
 }
 
 .dashboard__table__edit {
@@ -1016,7 +1045,7 @@ body {
   background-color: green;
 }
 
-.view__tables__table__2 {
+.view__tables__table__0 {
   background-color: red;
 }
 
@@ -1107,6 +1136,39 @@ svg {
   height: 1.2rem;
 }
 
+.filterSales {
+  width: 50%;
+  display: flex;
+  gap: 2rem;
+}
+
+.filterSales__label {
+  font-size: 2rem;
+  font-weight: 700;
+  color: darkblue;
+}
+
+.filterSales__input {
+  width: 38%;
+  text-align: center;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.filterSales__submit {
+  width: 38%;
+  background-color: darkblue;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 5px 0;
+  border: none;
+}
+
+.filterSales__submit:hover {
+  background-color: blue;
+}
+
 .login {
   padding: 2rem 0;
   margin: 0 auto;
@@ -1114,6 +1176,122 @@ svg {
 
 .login__title {
   text-align: center;
+  margin-bottom: 1rem;
+}
+
+.salewaiter {
+  display: block;
+}
+
+.salewaiter__total {
+  font-size: 2rem;
+  color: black;
+  margin: 1rem 0;
+}
+
+.salewaiter__total span {
+  font-weight: 700;
+  color: darkblue;
+}
+
+.salewaiter__title {
+  text-align: center;
+  color: black;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.salewaiter__tables {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1rem;
+}
+
+.salewaiter__table {
+  padding: 1rem;
+}
+
+.salewaiter__table input {
+  display: none;
+}
+
+.salewaiter__table label {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.salewaiter__table__1 {
+  background-color: green;
+}
+
+.salewaiter__table__0 {
+  background-color: red;
+}
+
+.salewaiter__chooseDishes {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px 0 black;
+}
+
+.salewaiter__dishes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.salewaiter__dish {
+  font-size: 1.5rem;
+}
+
+.salewaiter__dish__input {
+  height: 2rem;
+  width: 5rem;
+  text-align: center;
+}
+
+.salewaiter__dish__label {
+  color: black;
+  text-transform: capitalize;
+}
+
+.salewaiter__description {
+  font-size: 2rem;
+}
+
+.salewaiter__description span {
+  font-weight: 700;
+  color: darkblue;
+}
+
+.salewaiter__form {
+  width: 30%;
+}
+
+.salewaiter__form input {
+  width: 100%;
+  background-color: darkblue;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 5px 0;
+  border: none;
+}
+
+.salewaiter__form input:hover {
+  background-color: blue;
+}
+
+.salewaiter__detail {
+  text-align: center;
+  color: darkblue;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
@@ -57,6 +58,10 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
+        //obtener y asignar el rol
+        //1-> admin, 2-> cajero, 3->mesero, 4->chef
+        $role = Role::find($user->type);
+        $user->assignRole($role);
 
         $request->session()->flash('message', "Empleado registrado con éxito");
         $request->session()->flash('type', "success");
@@ -98,7 +103,7 @@ class UserController extends Controller
 
         $this->validate($request, [
             'name' => 'required|string',
-            'email' => 'required|email|unique:users,email,'.$user->id,
+            'email' => 'required|email|unique:users,email,' . $user->id,
             'type' => 'required|numeric',
         ]);
 
@@ -110,6 +115,13 @@ class UserController extends Controller
         $user->password = $user->password;
         $user->save();
 
+        //quitar rol actual
+        $user->roles()->detach();
+
+        //obtener y asignar el rol
+        //1-> admin, 2-> cajero, 3->mesero, 4->chef
+        $role = Role::find($user->type);
+        $user->assignRole($role);
 
         $request->session()->flash('message', "Empleado actualizado con éxito");
         $request->session()->flash('type', "success");

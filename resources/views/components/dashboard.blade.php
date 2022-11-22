@@ -24,7 +24,7 @@ $menus = [
 @role('waiter')
 @php
 $menus = [
-['route'=> 'sale.index', 'text' => 'Ventas'],
+['route'=> 'waiter.create', 'text' => 'Ventas'],
 ['route'=> 'dish.index', 'text' => 'Platillos'],
 ];
 @endphp
@@ -34,12 +34,8 @@ $menus = [
 @role('chef')
 @php
 $menus = [
-['route'=> 'sale.index', 'text' => 'Ventas'],
+['route'=> 'chef.index', 'text' => 'Ventas'],
 ['route'=> 'dish.index', 'text' => 'Platillos'],
-['route'=> 'category.index', 'text' => 'Categorías'],
-['route'=> 'ingredient.index', 'text' => 'Ingredientes'],
-['route'=> 'order.index', 'text' => 'Pedidos'],
-['route'=> 'supplier.index', 'text' => 'Proveedores'],
 ];
 @endphp
 @endrole
@@ -55,8 +51,8 @@ $menus = [
                 @foreach ($menus as $menu)
                 <a class="dashboard__nav__item" href="{{route($menu['route'])}}">{{ $menu['text'] }}</a>
                 @endforeach
-                
-              {{--   <a class="dashboard__nav__item" href="{{route('dish.index')}}">Platillos</a>
+
+                {{-- <a class="dashboard__nav__item" href="{{route('dish.index')}}">Platillos</a>
                 <a class="dashboard__nav__item" href="{{route('category.index')}}">Categorías</a>
                 <a class="dashboard__nav__item" href="{{route('ingredient.index')}}">Ingredientes</a>
                 <a class="dashboard__nav__item" href="{{route('order.index')}}">Pedidos</a>
@@ -79,9 +75,9 @@ $menus = [
                 @endforeach
             </section>
             <div class="dashboard__slot">
-                 {{$slot}}
+                {{$slot}}
             </div>
-           
+
         </div>
     </div>
 </x-layout>

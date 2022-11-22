@@ -33,8 +33,8 @@ $items = [
             <select name="type" id="type" class="form__input">
                 <option>Seleccione una categoría</option>
                 <option value="1">Administrador</option>
-                <option value="2">Mesero</option>
-                <option value="3">Cajero</option>
+                <option value="2">Cajero</option>
+                <option value="3">Mesero</option>
                 <option value="4">Chef</option>
             </select>
             @error('type') <div class="form__error">{{$message}}</div> @enderror

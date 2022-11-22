@@ -1,15 +1,14 @@
 @php
 $items = [
-['route'=> 'sale.index', 'text' => 'Ventas del día'],
-['route'=> 'sale.filter', 'text' => 'Historial de ventas'],
+['route'=> 'cashier.index', 'text' => 'Pendientes'],
+['route'=> 'cashier.filter', 'text' => 'Cobradas'],
 ];
 @endphp
 
 <x-dashboard :items="$items">
-    <h2>Ver Ventas del día</h2>
-    <p>Ve las ventas que se han hecho el día de hoy</p>
+    <h2>Ventas cobradas</h2>
+    <p>Ve las ventas que cobraste hoy</p>
     <h5 class="salewaiter__total"><span>Total: $</span>{{$total}}</h5>
-    <h5 class="salewaiter__total"><span>Cobrado: $</span>{{$cobrado}}</h5>
     @if(session("message"))
     <div class="dashboard__notification  dashboard__notification__{{session('type')}}">
         {{session('message')}}
@@ -51,14 +50,9 @@ $items = [
             <td>{{$sale->status}}</td>
             <td>${{$sale->total}}</td>
             <td class="dashboard__table__actions">
-                <a class="dashboard__table__action dashboard__table__show" href="{{route('sale.show', $sale)}}">Ver</a>
+                <a class="dashboard__table__action dashboard__table__show" href="{{route('cashier.show', $sale)}}">Ver</a>
             </td>
         </tr>
         @endforeach
-        <tfoot>
-            <tr>
-                <th colspan="5">{{ $sales->links() }}</th>
-            </tr>
-        </tfoot>
     </table>
 </x-dashboard>

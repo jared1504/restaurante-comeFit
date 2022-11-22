@@ -67,7 +67,7 @@ $items = [
                 </div>
                 @endforeach
             </div>
-            @error('dishIngredient2s') <div class="form__error">{{$message}}</div> @enderror
+            @error('dishIngredients') <div class="form__error">{{$message}}</div> @enderror
         </div>
 
 

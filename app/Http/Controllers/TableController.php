@@ -76,7 +76,7 @@ class TableController extends Controller
 
         $request->session()->flash('table.id', $table->id); */
         if ($table->status == 1) {
-            $table->status = 2;
+            $table->status = 0;
         } else {
             $table->status = 1;
         }

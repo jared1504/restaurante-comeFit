@@ -65,7 +65,7 @@ class OrderController extends Controller
         //guardar cambios
         $order = new  Order();
         $order->supplier_id = $request->supplier_id;
-        $order->user_id = 1; //cambiar cuando ya haya autenticación
+        $order->user_id = auth()->user()->id; //autenticación implementada
         $order->total = 0;
         $order->save();
         $total = 0;

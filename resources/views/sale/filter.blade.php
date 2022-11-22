@@ -6,10 +6,15 @@ $items = [
 @endphp
 
 <x-dashboard :items="$items">
-    <h2>Ver Ventas del día</h2>
-    <p>Ve las ventas que se han hecho el día de hoy</p>
+    <h2>Historial de Ventas</h2>
+    <p>Ve las ventas de un día en especifico</p>
+    <form action="{{route('sale.filter')}}" method="POST" class="filterSales">
+        @csrf
+        <label for="date" class="filterSales__label">Fecha:</label>
+        <input type="date" name="date" value="{{date($fecha)}}" class="filterSales__input">
+        <input type="submit" value="Filtrar Ventas" class="filterSales__submit">
+    </form>
     <h5 class="salewaiter__total"><span>Total: $</span>{{$total}}</h5>
-    <h5 class="salewaiter__total"><span>Cobrado: $</span>{{$cobrado}}</h5>
     @if(session("message"))
     <div class="dashboard__notification  dashboard__notification__{{session('type')}}">
         {{session('message')}}

@@ -29,8 +29,8 @@ $items = [
             <select name="type" id="type" class="form__input">
                 <option>Seleccione una categoría</option>
                 <option value="1" @if($user->type == 1) {{'selected'}} @endif>Administrador</option>
-                <option value="2" @if($user->type == 2) {{'selected'}} @endif>Mesero</option>
-                <option value="3" @if($user->type == 3) {{'selected'}} @endif>Cajero</option>
+                <option value="2" @if($user->type == 2) {{'selected'}} @endif>Cajero</option>
+                <option value="3" @if($user->type == 3) {{'selected'}} @endif>Mesero</option>
                 <option value="4" @if($user->type == 4) {{'selected'}} @endif>Chef</option>
             </select>
             @error('type') <div class="form__error">{{$message}}</div> @enderror

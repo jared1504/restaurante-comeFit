@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
     {{--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">--}}
     <link rel="stylesheet" href="css/glider.css">
+    <script src="{{ mix('js/notifications.js') }}"></script>
 </head>
 
 <body>

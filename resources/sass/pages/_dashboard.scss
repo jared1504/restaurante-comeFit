@@ -80,10 +80,11 @@
 
     &__table {
         tfoot {
-           background-color: darkblue;
+            background-color: darkblue;
             color: white;
             text-align: left;
         }
+
         width: 100%;
         text-align: center;
 
@@ -117,6 +118,35 @@
             }
         }
 
+        &__enlace {
+
+            &__a {
+                width: 50%;
+                padding: 5px;
+                color: white;
+                text-decoration: none;
+                font-weight: 700;
+                border: none;
+            }
+
+            &__Preparando {
+                background-color: red;
+
+                &:hover {
+                    background-color: darkred;
+                }
+            }
+
+            &__Listo {
+                background-color: blue;
+
+                &:hover {
+                    background-color: darkblue;
+                }
+            }
+
+        }
+
         &__actions {
             width: 100%;
             display: flex;
@@ -139,6 +169,10 @@
 
         &__show {
             background-color: blue;
+
+            &:hover {
+                background-color: darkblue;
+            }
         }
 
         &__edit {
@@ -247,7 +281,7 @@
                 background-color: green;
             }
 
-            &__2 {
+            &__0 {
                 background-color: red;
             }
         }
@@ -259,21 +293,25 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    &__showing{
+
+    &__showing {
         color: white;
-        
+
     }
+
     &__header {
         display: flex;
         justify-content: space-between;
         width: fit-content;
         align-items: center;
+
         /* flex: 1 1 0%; */
         a:link,
         a:visited {
             color: var(--primary-color-300) !important;
         }
     }
+
     &__firstpage {
         position: relative;
         display: inline-flex;
@@ -283,6 +321,7 @@
         cursor: default;
         padding: 4px 12px;
     }
+
     &__not-firstpage {
         position: relative;
         display: inline-flex;
@@ -291,23 +330,27 @@
         cursor: pointer;
         padding: 4px 12px;
     }
+
     &__nextpage {
         position: relative;
         display: inline-flex;
         align-items: center;
         padding: 4px 12px;
     }
+
     &__not-nextpage {
         color: var(--neutral-color-ligth);
         border: 1px solid var(--accent-color-400);
         padding: 4px 12px;
     }
+
     &__currentpage {
         color: var(--neutral-color-ligth);
         background-color: var(--accent-color-400);
         border: 1px solid var(--accent-color-400);
         padding: 4px 12px;
     }
+
     &__page {
         border: 1px solid var(--accent-color-400);
         padding: 4px 12px;
@@ -325,10 +368,44 @@ svg {
         align-items: center;
         gap: 4px;
     }
+
     &__edit-icon,
     &__remove-icon,
     &__info-icon {
         width: 1.2rem;
         height: 1.2rem;
+    }
+}
+
+.filterSales {
+    width: 50%;
+    display: flex;
+    gap: 2rem;
+
+    &__label {
+        //width: 20%;
+        font-size: 2rem;
+        font-weight: 700;
+        color: darkblue;
+    }
+
+    &__input {
+        width: 38%;
+        text-align: center;
+        font-size: 1.5rem;
+        border: none;
+    }
+
+    &__submit {
+        width: 38%;
+        background-color: darkblue;
+        color: white;
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 5px 0;
+        border: none;
+        &:hover{
+            background-color: blue;
+        }
     }
 }

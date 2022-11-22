@@ -1,7 +1,7 @@
 @php
 $items = [
 ['route'=> 'sale.index', 'text' => 'Ventas'],
-['route'=> 'sale.create', 'text' => 'Nueva Venta'],
+['route'=> 'sale.filter', 'text' => 'Historial de ventas'],
 ];
 @endphp
 
